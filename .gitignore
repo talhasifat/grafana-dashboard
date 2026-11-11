@@ -1,0 +1,22 @@
+# Secrets (never commit)
+.env
+*.key
+*.pem
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Editor / OS files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Vagrant and archives
+.vagrant/
+*.zip
+
+# Local data and logs
+*.log
