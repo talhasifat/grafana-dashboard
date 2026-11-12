@@ -10,6 +10,9 @@
 
 A working observability platform that collects **real host metrics**, **real HTTP application metrics**, **real Kubernetes pod logs**, shows them in **Grafana**, and sends an **email alert** when the application goes down.
 
+<img width="1917" height="915" alt="Screenshot 2026-11-12 103231" src="https://github.com/user-attachments/assets/9ef437a0-fe8f-4dc2-967b-9910ce310c89" />
+
+
 ---
 
 ## 1. What this project delivers
@@ -21,6 +24,7 @@ A working observability platform that collects **real host metrics**, **real HTT
 | 3 | Email alerting | A Grafana alert rule (`OrderAPI target down`) fires after a controlled failure and Grafana sends an email through SMTP. |
 
 ---
+<img width="2720" height="2192" alt="observability_architecture" src="https://github.com/user-attachments/assets/47c3b21a-fe5d-400a-b2f5-f7ebe7bec353" />
 
 ## 2. Architecture
 
@@ -234,6 +238,9 @@ curl -s localhost:8000/metrics | grep orderapi
 
 ## 9. Prometheus
 
+<img width="1913" height="892" alt="Screenshot 2026-11-12 103110" src="https://github.com/user-attachments/assets/b508cd29-4dd2-41b9-aaab-11193e129e3c" />
+
+
 `prometheus/prometheus.yml` defines two scrape jobs with a 15 s interval:
 
 | Job | Target |
@@ -274,6 +281,8 @@ The values match closely; small differences come from the moment each value is r
 ---
 
 ## 10. Grafana dashboard
+<img width="1912" height="916" alt="Screenshot 2026-11-12 103158" src="https://github.com/user-attachments/assets/dfef12fc-4ef1-4fa5-8863-bc3e600dad26" />
+
 
 Dashboard: **Observability / System & Application Observability**, with 9 panels:
 
@@ -295,6 +304,9 @@ docker compose restart grafana
 ```
 
 ### Kubernetes logs in Grafana Explore
+
+<img width="1917" height="922" alt="Screenshot 2026-11-12 103314" src="https://github.com/user-attachments/assets/21fa1c67-23c2-4b23-902a-7a382a87d365" />
+
 
 Open **Explore**, choose the **Loki** data source, set the range to *Last 15 minutes* and run one query at a time:
 
@@ -325,6 +337,8 @@ SMTP credentials are passed to Grafana through environment variables (`GF_SMTP_*
 Exported rule: `alerting/alert-rule.yaml`. Details: `alerting/configuration-notes.md`.
 
 ### Trigger the alert safely
+<img width="1051" height="161" alt="Screenshot 2026-11-12 104541" src="https://github.com/user-attachments/assets/341651a5-073f-4de8-866e-dfe46e862866" />
+
 
 ```bash
 docker compose stop app      # the target goes DOWN
