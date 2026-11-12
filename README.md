@@ -345,6 +345,7 @@ docker compose stop app      # the target goes DOWN
 # wait about 2 to 3 minutes: Normal -> Pending -> Firing, then an email arrives
 docker compose start app     # the rule returns to Normal
 ```
+<img width="1051" height="161" alt="Screenshot 2026-11-12 104541" src="https://github.com/user-attachments/assets/55178542-529f-4259-837f-2bf9b1de42a0" />
 
 ---
 
